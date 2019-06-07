@@ -1,0 +1,46 @@
+<xml>
+<item>
+<title>Xvideos - Latest</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
+
+
+<item>
+<title>Xvideos - Most Popular</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/month/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
+
+
+</xml>
