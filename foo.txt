@@ -20,9 +20,8 @@
 </regex>
 </item>
 
-
 <item>
-<title>Xvideos - Most Popular</title>
+<title>Xvideos - Popular Month</title>
 <link>$doregex[makelist]</link>
 <regex>
   <name>makelist</name>
@@ -42,5 +41,85 @@
 </regex>
 </item>
 
+<item>
+<title>Xvideos - Popular Week</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/week/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
 
+<item>
+<title>Xvideos - Popular 2daysago</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/2daysago/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
+<item>
+<title>Xvideos - Popular yesterday</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/yesterday/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
+<item>
+<title>Xvideos - Popular today</title>
+<link>$doregex[makelist]</link>
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR red][makelist.param3][/COLOR]</title>
+        <link>$doregex[getsrccosmix]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[div id.+<a href="(.+?)".+img src="(.+?)".+title="(.+?)">]]></expres>
+<page>http://www.xvideos.com/gay/day/</page>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getsrccosmix</name>
+<expres><![CDATA[setVideoUrlHigh\('(.+?)'\)]]></expres>
+<page>http://www.xvideos.com[makelist.param1]</page>
+</regex>
+</item>
 </xml>
