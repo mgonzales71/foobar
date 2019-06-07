@@ -1,5 +1,63 @@
 <xml>
 <item>
+<name>Motherless.com - Latest</name>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+        <title>[makelist.param3]</title>
+        <link>$doregex[playurl]</link>
+        <thumbnail>[makelist.param2]</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re
+    html = ''
+    html += client.request('https://motherless.com/porn/gay/videos')
+    html += client.request('https://motherless.com/porn/gay/videos?page=2')
+    html += client.request('https://motherless.com/porn/gay/videos?page=3')    
+    html += client.request('https://motherless.com/porn/gay/videos?page=4')
+    html += client.request('https://motherless.com/porn/gay/videos?page=5')
+    html += client.request('https://motherless.com/porn/gay/videos?page=6')
+    html += client.request('https://motherless.com/porn/gay/videos?page=7')
+    html += client.request('https://motherless.com/porn/gay/videos?page=8')
+    html += client.request('https://motherless.com/porn/gay/videos?page=9')
+    html += client.request('https://motherless.com/porn/gay/videos?page=10')
+    html += client.request('https://motherless.com/porn/gay/videos?page=11')
+    html += client.request('https://motherless.com/porn/gay/videos?page=12')
+    html += client.request('https://motherless.com/porn/gay/videos?page=13')
+    html += client.request('https://motherless.com/porn/gay/videos?page=14')
+    html += client.request('https://motherless.com/porn/gay/videos?page=15')
+    html = re.sub('&#[0-9]+;', '\'', html)
+    html = html.replace('&quot'+';', '"')
+    html = html.replace('&amp;', '&')
+    html = html.replace('&amp;#039;', '&')
+    html = html.split('<h1>\n.+?Most\sRecent\sVideos', 1)[-1]
+    html = html.split('<div class=\'pagination_link\'>', 1)[0]
+    express = '<div class="thumb-container.+?\n.+?<a\shref="(.+?)".+?\n.+?src="(.+?)".+?alt="(.+?)"'
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)
+    return links
+]]></expres>
+<page></page>
+</regex>
+<regex>
+<name>playurl</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m,url = ''):
+    from resources.lib.modules import client
+    import re
+    main = '[makelist.param1]'
+    html = client.request(main)
+    express = 'fileurl = \'(.+?)\''
+    links = re.compile(express, re.MULTILINE|re.DOTALL).findall(html)[0]
+    return links
+]]></expres>
+<page></page>
+</regex>
+</item>
+
+<item>
 <title>Xvideos - Latest</title>
 <link>$doregex[makelist]</link>
 <regex>
